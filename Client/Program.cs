@@ -2,6 +2,7 @@ using Blazored.LocalStorage;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using WebShop.Client;
+using WebShop.Client.Services.AuthService;
 using WebShop.Client.Services.CartService;
 using WebShop.Client.Services.CategoryService;
 using WebShop.Client.Services.ProductService;
@@ -19,5 +20,6 @@ builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().Cre
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<ICartService, CartService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 
 await builder.Build().RunAsync();

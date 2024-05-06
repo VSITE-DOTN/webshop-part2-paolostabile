@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using WebShop.Server.Data;
+using WebShop.Server.Services.CartService;
 using WebShop.Server.Services.CategoryService;
 using WebShop.Server.Services.ProductService;
 
@@ -16,6 +17,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<ICartService, CartService>();
 
 var app = builder.Build();
 

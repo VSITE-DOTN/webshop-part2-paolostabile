@@ -5,6 +5,7 @@ using WebShop.Server.Data;
 using WebShop.Server.Services.AuthService;
 using WebShop.Server.Services.CartService;
 using WebShop.Server.Services.CategoryService;
+using WebShop.Server.Services.OrderService;
 using WebShop.Server.Services.ProductService;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,6 +23,7 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<ICartService, CartService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
